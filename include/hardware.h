@@ -16,5 +16,6 @@
 void init_pins();
 void init_Serial();
 void init_I2C();
+void init_timer();
 
 #endif // HARDWARE_INIT_H

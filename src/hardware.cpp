@@ -40,3 +40,4 @@ void init_I2C(){
   Wire.endTransmission();
   Serial.println("I2C initialized");
 }
+
