@@ -1,6 +1,7 @@
 #include "hardware.h"
 #include <Wire.h>
 #include <Arduino.h>
+#include "imu.h"
 
 void init_pins(){
   // Motor direction pinspinMode(STAIR1_DIR_PIN1,OUTPUT);
@@ -31,13 +32,7 @@ void init_Serial(){
 
 void init_I2C(){
   Wire.begin();
-  Wire.beginTransmission(TCA_ADDR);
-  Wire.write(1 << 4);
-  Wire.endTransmission();
-  Wire.beginTransmission(IMU_ADDR);
-  Wire.write(0x6B); // PWR_MGMT_1レジスタ
-  Wire.write(0);    // スリープ解除
-  Wire.endTransmission();
+  init_IMU();
   Serial.println("I2C initialized");
 }
 
