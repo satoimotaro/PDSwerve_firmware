@@ -54,6 +54,9 @@ bool controller_commands(char c){
     case 'd':
       control_motors(270,270,1,150);
       break;
+    case 'f':
+      control_motors(0,0,0,0);
+      break; 
     case 'z':
       control_motors(0,180,1,150);
       break;
